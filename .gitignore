@@ -1,0 +1,5 @@
+.adminbro
+node_modules
+
+public/*
+!public/logos/.gitkeep
