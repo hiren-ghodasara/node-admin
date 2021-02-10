@@ -1,10 +1,13 @@
+require('dotenv').config()
 const AdminBro = require('admin-bro')
 const path = require('path')
-require('dotenv').config()
 const AdminBroExpress = require('@admin-bro/express')
 const AdminBroSequelize = require('@admin-bro/sequelize')
 const express = require('express')
+
+// Local imports
 const { authenticate } = require('./admin/util')
+const routes = require('./routes')
 
 AdminBro.registerAdapter(AdminBroSequelize)
 
@@ -26,6 +29,9 @@ const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
 
 app.use(adminBro.options.rootPath, router)
 app.use(adminBro.options.loginPath, router)
+
+// Registered Routes
+app.use('/api', routes)
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
