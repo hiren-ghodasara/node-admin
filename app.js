@@ -1,5 +1,6 @@
 const AdminBro = require('admin-bro')
 const path = require('path');
+require('dotenv').config(); 
 const AdminBroExpress = require('@admin-bro/express')
 const AdminBroSequelize = require('@admin-bro/sequelize')
 const express = require('express')
