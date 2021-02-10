@@ -1,5 +1,11 @@
 .adminbro
 node_modules
 
-public/*
+public/logos/*
 !public/logos/.gitkeep
+
+public/card_image/*
+!public/card_image/.gitkeep
+
+public/categories/*
+!public/categories/.gitkeep
