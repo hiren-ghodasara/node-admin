@@ -1,6 +1,6 @@
 const AdminBro = require('admin-bro')
-const path = require('path');
-require('dotenv').config(); 
+const path = require('path')
+require('dotenv').config()
 const AdminBroExpress = require('@admin-bro/express')
 const AdminBroSequelize = require('@admin-bro/sequelize')
 const express = require('express')
@@ -12,8 +12,8 @@ const adminBro = require('./admin')
 
 const app = express()
 //app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-const port = 5000
+app.use(express.static(path.join(__dirname, 'public')))
+const port = process.env.APP_PORT || 5000
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
